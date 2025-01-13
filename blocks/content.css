@@ -1,3 +1,18 @@
-.content{
-    padding: 20px;
+.content {
+  padding: 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: block;
 }
+
+
+@media screen and (max-width: 627px) {
+  .content {
+    max-width: 288px;
+    display: block;
+    margin: 0 auto;
+  }
+
+
+}
+

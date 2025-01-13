@@ -1,10 +1,14 @@
+
+/* 
+Please let me know if you can see this note. I'm just making sure that you are seeing the most updated version of the code. Previously I had trouble submitting updated code to github 01.05.25*/
+
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 413px);
-  gap: 40px 20px;
+  grid-template-columns: repeat(auto-fit, 470px);
+  gap: 20px 20px;
   padding-top: 20px;
   justify-content: center;
-  border-bottom: 1px rgb(33, 33, 33, 0.4) solid;
+  max-width: 1280px;
 }
 
 .cards__list {
@@ -16,5 +20,11 @@
 @media screen and (max-width: 627px) {
   .cards__list {
     grid-template-columns: repeat(auto-fit, 288px);
+  }
+
+  .cards {
+    max-width: 288px;
+    display: block;
+    margin: 0 auto;
   }
 }

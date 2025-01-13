@@ -2,9 +2,11 @@
 @import url(../vendor/fonts.css);
 @import url(../blocks/page.css);
 @import url(../blocks/header.css);
-@import url(../blocks/nav.css);
 @import url(../blocks/profile.css);
 @import url(../blocks/content.css);
 @import url(../blocks/cards.css);
 @import url(../blocks/card.css);
 @import url(../blocks/footer.css);
+
+/* 
+Please let me know if you can see this note. I'm just making sure that you are seeing the most updated version of the code. Previously I had trouble submitting updated code to github 01.05.25*/

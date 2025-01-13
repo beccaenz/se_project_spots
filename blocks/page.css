@@ -1,33 +1,12 @@
-.page{
-    background-color: #fcf5E5;
-    min-height: 100vh;
-    font-family: Poppins, Arial, Helvetica, sans-serif;
+.page {
+  background-color: #fcf5e5;
+  min-height: 100vh;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
 }
 
-.page__section{
-    max-width: 1280px;
-    margin: 0 auto;
+.page__section {
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
-
-/*
-.block {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-add for text overflow to the text element of each item
-- cant be a flex contrainer 
-set a mex-width as well
--must be smaller then the img
-.block {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-}
-
-*/
 
