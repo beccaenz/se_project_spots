@@ -1,5 +1,6 @@
 .card {
   max-width: 413px;
+
 }
 
 .card__image {
@@ -31,7 +32,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
+  height: 32px;
 }
 
 .card__like-button {

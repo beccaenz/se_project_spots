@@ -12,7 +12,7 @@ Socal media web page - can share photos and create a profile
 
 ## Deployment
 
--deployed via git pages
+-deployed via git pages -[Deployment Link](https://beccaenz.github.io/se_project_spots/)
 
 **Figma**
 
