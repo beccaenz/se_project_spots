@@ -88,25 +88,28 @@
   cursor: pointer;
 }
 
+/* Im sorry but I dont agree on the gaps between cards and the bottom border. What I'm seeing in figma is a 20px gap between each card and the bottom border. That is what I'm seeing in my code as well. Pls let me know if I misunderstanding the comment. */
+
 @media screen and (max-width: 627px) {
   .profile {
     flex-direction: column;
     max-width: 288px;
     align-items: center;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 0px;
   }
 
   .profile__avatar {
-    margin: 0 0 12px;
+    margin: 0 auto;
     height: 80px;
     width: 80px;
   }
 
   .profile__name {
     font-size: 20px;
-    margin: 0 0 6px;
+    margin: 0px;
     max-width: 288px;
+    padding: 12px 0 6px;
   }
 
   .profile__column {
@@ -114,8 +117,13 @@
   }
 
   .profile__description {
-    margin: 0 0 32px;
     max-width: 288px;
+  }
+
+  .profile__edit-button {
+    text-align: center;
+    margin: 0 auto;
+    padding: 32px 0 20px;
   }
 
   .profile__add-button {
