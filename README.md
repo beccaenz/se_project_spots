@@ -20,6 +20,6 @@ Socal media web page - can share photos and create a profile
 
 **Video**
 
--[Video Link](https://drive.google.com/file/d/1fJquEVFYA-KSeVCZkyt5T6CQvwgox5Iw/view?usp=sharing)
+-[Video Link](https://drive.google.com/file/d/1raZ0C3PJwDB7cSgsMYdD8bMVRhJ75iEm/view?usp=sharing)
 
 
