@@ -5,14 +5,8 @@
   display: block;
 }
 
-
 @media screen and (max-width: 627px) {
   .content {
     max-width: 288px;
-    display: block;
-    margin: 0 auto;
   }
-
-
 }
-

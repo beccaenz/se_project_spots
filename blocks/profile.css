@@ -76,7 +76,7 @@
   margin-left: auto;
   height: 52px;
   padding: 18px 32px;
-  margin-top: 138px;
+  margin-top: auto;
   gap: 8px;
   border-radius: 8px;
   border: none;
@@ -102,8 +102,6 @@
     width: 80px;
   }
 
-  /* add correct font height */
-
   .profile__name {
     font-size: 20px;
     margin: 0 0 6px;
@@ -127,7 +125,6 @@
 
 @media screen and (min-width: 628px) and (max-width: 830px) {
   .profile__add-button {
-    margin-top: 138px;
     min-width: 160px;
   }
 }
