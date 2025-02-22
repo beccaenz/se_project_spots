@@ -88,7 +88,6 @@
   cursor: pointer;
 }
 
-/* Im sorry but I dont agree on the gaps between cards and the bottom border. What I'm seeing in figma is a 20px gap between each card and the bottom border. That is what I'm seeing in my code as well. Pls let me know if I misunderstanding the comment. */
 
 @media screen and (max-width: 627px) {
   .profile {
