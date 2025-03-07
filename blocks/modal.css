@@ -1,0 +1,100 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(33, 33, 33, 0.4);
+  /* font-family: Poppins, Arial, Helvetica, sans-serif;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  padding: 0 20px;
+}
+
+.modal__opened {
+  visibility: visible;
+}
+
+.modal__container {
+  background-color: #fff;
+  padding: 32px 50px;
+  color: #212121;
+  max-width: 730px;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* might need more work on size of close button*/
+.modal__close-btn {
+  position: absolute;
+  top: 32;
+  right: 50px;
+  height: 40px;
+  width: 40px;
+  opacity: 0.4;
+  color: #212121;
+  border: none;
+  background-color: transparent;
+}
+
+.modal__close-btn:hover {
+  opacity: 1;
+}
+
+.modal__title {
+  font-weight: 500;
+  font-size: 32px;
+  margin: 0 0 32px;
+}
+
+.modal__label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.modal__input {
+  padding: 16px 12px;
+}
+
+/* correction needed*/
+
+.modal__submit-btn {
+  width: 156px;
+  padding: 18px 0;
+  background-color: #212121;
+  color: #fcf5e5;
+}
+
+@media screen and (max-width: 627px) {
+  .modal {
+    padding: 0 10px;
+  }
+
+  .modal__container {
+    padding: 10px;
+  }
+
+  .modal__title {
+    font-size: 20px;
+    margin: 10px 0 34px;
+  }
+
+  .modal__close-btn {
+    top: 12px;
+    right: 12px;
+  }
+
+  .modal__label {
+    margin-bottom: 24px;
+  }
+
+  .modal__submit-btn {
+    width: 100%;
+  }
+}
