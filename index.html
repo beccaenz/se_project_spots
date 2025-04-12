@@ -140,7 +140,7 @@
                 type="text"
                 id="name"
                 name="name-profile"
-                placeholder="ype your name here"
+                placeholder="Type your name here"
                 class="modal__input"
             /></label>
             <label class="modal__label" for="description"
@@ -150,6 +150,42 @@
                 id="description"
                 name="description-profile"
                 placeholder="Describe yourself"
+                class="modal__input"
+              />
+            </label>
+            <button type="submit" class="modal__submit-btn">Save</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal" id="edit-card-modal">
+        <div class="modal__container">
+          <button
+            class="modal__close-btn"
+            src="./images/close.jpg"
+            alt="closeWindow"
+          >
+            <img src="./images/close.jpg" alt="closeWindow" />
+          </button>
+          <h2 class="modal__title">Image link</h2>
+
+          <form name="edit-profile">
+            <label class="modal__label" for="link"
+              >Image Link
+              <input
+                type="text"
+                id="name"
+                name="name-profile"
+                placeholder="Paste a link to the picture"
+                class="modal__input"
+            /></label>
+            <label class="modal__label" for="caption"
+              >Caption
+              <input
+                type="text"
+                id="description"
+                name="description-profile"
+                placeholder="Type your caption"
                 class="modal__input"
               />
             </label>
