@@ -97,19 +97,20 @@ profileEditButton.addEventListener("click", openModal);
 
 
 // Create the form submission handler.
-function handleAddCardSubmit(evt) {
+function handleAddCardSubmit(event) {
   // Prevent default browser behavior.
-  evt.preventDefault(); 
+ 
  
   // Log both input values to the console.
 
   console.log(nameInputCard.value);
   console.log(linkInput.value);
+  
 
   // Close the modal.
   editModalCard.classList.remove("modal_opened");
 
-
+  event.preventDefault(); 
 }
 
 // Create the submit listener.
