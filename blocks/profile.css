@@ -35,7 +35,7 @@
   color: #212121;
 }
 
-.porfile__description {
+.profile__description {
   margin: 0;
   text-overflow: ellipsis;
   overflow: hidden;

@@ -17,15 +17,15 @@ console.log(initialCards);
 const profileEditButton = document.querySelector(".profile__edit-button");
 const editModalCard = document.querySelector("#edit-card-modal");
 const editModal = document.querySelector("#edit-profile-modal");
-const closeButton = editModal.querySelector(".modal__close-btn");
+const closeButtonProfile = editModal.querySelector(".modal__close-btn");
 const closeButtonCard = editModalCard.querySelector(".modal__close-btn");
-const saveModal = editModal.querySelector(".modal__submit-btn");
+const saveModalProfile = editModal.querySelector(".modal__submit-btn"); // saveModalProfile is being used to change the contents of the current profile for name and description
 const nameInput = editModal.querySelector("#name");
 const descriptionInput = editModal.querySelector("#description");
 const profileName = document.querySelector(".profile__name");
-const profileDecription = document.querySelector(".porfile__description");
-const addCardFormElement = document.querySelector(".profile__add-button"); 
-const modalSubmitCard = editModalCard.querySelector(".modal__submit-btn"); // wrong selectorr?? no log to console
+const profileDecription = document.querySelector(".profile__description");
+const addCardModalOpenButton = document.querySelector(".profile__add-button"); 
+const modalSubmitCard = editModalCard.querySelector(".modal__submit-btn"); 
 const nameInputCard = editModalCard.querySelector("#link"); 
 const linkInput = editModalCard.querySelector("#caption");
 
@@ -36,8 +36,8 @@ const linkInput = editModalCard.querySelector("#caption");
 function saveProfile(event){
    
    
-   profileName.innerHTML = nameInput.value;
-    profileDecription.innerHTML = descriptionInput.value;
+   profileName.textContent = nameInput.value;
+    profileDecription.textContent = descriptionInput.value;
 
 
     console.log(nameInput.value);
@@ -47,7 +47,7 @@ function saveProfile(event){
 }
 
 
-function openModal(){
+function openProfileModal(){
     editModal.classList.add("modal_opened");
 
 
@@ -58,7 +58,7 @@ function openModal(){
 
 }
 
-function closeModal(){
+function closeProfileModal(){
     editModal.classList.remove("modal_opened");
 }
 
@@ -83,11 +83,11 @@ function closeModalCard(){
 
 
 
-addCardFormElement.addEventListener("click", openModalCard); // correct??
+addCardModalOpenButton.addEventListener("click", openModalCard); 
 closeButtonCard.addEventListener("click", closeModalCard);
-closeButton.addEventListener("click", closeModal);
-saveModal.addEventListener("click", saveProfile);
-profileEditButton.addEventListener("click", openModal);
+closeButtonProfile.addEventListener("click", closeProfileModal);
+saveModalProfile.addEventListener("submit", saveProfile);
+profileEditButton.addEventListener("click", openProfileModal);
 
 
 
@@ -114,4 +114,4 @@ function handleAddCardSubmit(event) {
 }
 
 // Create the submit listener.
-modalSubmitCard.addEventListener('click', handleAddCardSubmit);
+modalSubmitCard.addEventListener("submit", handleAddCardSubmit);
