@@ -16,16 +16,14 @@ console.log(initialCards);
 
 const profileEditButton = document.querySelector(".profile__edit-button");
 const editModalCard = document.querySelector("#edit-card-modal");
-const editModal = document.querySelector("#edit-profile-modal");
-const closeButtonProfile = editModal.querySelector(".modal__close-btn");
+const editModalProfile = document.querySelector("#edit-profile-modal");
+const closeButtonProfile = editModalProfile.querySelector(".modal__close-btn");
 const closeButtonCard = editModalCard.querySelector(".modal__close-btn");
-const saveModalProfile = editModal.querySelector(".modal__submit-btn"); // saveModalProfile is being used to change the contents of the current profile for name and description
-const nameInput = editModal.querySelector("#name");
-const descriptionInput = editModal.querySelector("#description");
+const nameInput = editModalProfile.querySelector("#name");
+const descriptionInput = editModalProfile.querySelector("#description");
 const profileName = document.querySelector(".profile__name");
 const profileDecription = document.querySelector(".profile__description");
 const addCardModalOpenButton = document.querySelector(".profile__add-button"); 
-const modalSubmitCard = editModalCard.querySelector(".modal__submit-btn"); 
 const nameInputCard = editModalCard.querySelector("#link"); 
 const linkInput = editModalCard.querySelector("#caption");
 
@@ -42,13 +40,13 @@ function saveProfile(event){
 
     console.log(nameInput.value);
 
-    editModal.classList.remove("modal_opened");
+    editModalProfile.classList.remove("modal_opened");
     event.preventDefault();
 }
 
 
 function openProfileModal(){
-    editModal.classList.add("modal_opened");
+    editModalProfile.classList.add("modal_opened");
 
 
     // change the placeholder to current profile name
@@ -59,7 +57,7 @@ function openProfileModal(){
 }
 
 function closeProfileModal(){
-    editModal.classList.remove("modal_opened");
+    editModalProfile.classList.remove("modal_opened");
 }
 
 
@@ -86,7 +84,7 @@ function closeModalCard(){
 addCardModalOpenButton.addEventListener("click", openModalCard); 
 closeButtonCard.addEventListener("click", closeModalCard);
 closeButtonProfile.addEventListener("click", closeProfileModal);
-saveModalProfile.addEventListener("submit", saveProfile);
+editModalProfile.addEventListener("submit", saveProfile);
 profileEditButton.addEventListener("click", openProfileModal);
 
 
@@ -114,4 +112,4 @@ function handleAddCardSubmit(event) {
 }
 
 // Create the submit listener.
-modalSubmitCard.addEventListener("submit", handleAddCardSubmit);
+editModalCard.addEventListener("submit", handleAddCardSubmit);
