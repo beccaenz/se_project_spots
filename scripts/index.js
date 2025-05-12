@@ -11,8 +11,6 @@ const initialCards = [
 ];
 
 
-console.log(initialCards);
-
 
 const profileEditButton = document.querySelector(".profile__edit-button");
 const editModalCard = document.querySelector("#edit-card-modal");
@@ -113,3 +111,18 @@ function handleAddCardSubmit(event) {
 
 // Create the submit listener.
 editModalCard.addEventListener("submit", handleAddCardSubmit);
+
+
+//array cards
+
+
+initialCards.forEach(function(item){
+
+    console.log(item.name);
+    console.log(item.link);
+
+
+});
+
+
+console.log(initialCards);
