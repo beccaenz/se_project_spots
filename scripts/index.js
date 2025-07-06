@@ -21,10 +21,10 @@ const closeButtonCard = editModalCard.querySelector(".modal__close-btn");
 const nameInput = editModalProfile.querySelector("#name");
 const descriptionInput = editModalProfile.querySelector("#description");
 const profileName = document.querySelector(".profile__name");
-const profileDecription = document.querySelector(".profile__description");
+const profileDescription = document.querySelector(".profile__description");
 const addCardModalOpenButton = document.querySelector(".profile__add-button"); 
-const nameInputCard = editModalCard.querySelector("#link"); 
-const linkInput = editModalCard.querySelector("#caption");
+const nameInputCard = editModalCard.querySelector("#caption"); 
+const linkInput = editModalCard.querySelector("#link");
 const cardTemplate = document.querySelector("#card-template");
 const cardList = document.querySelector(".cards__list");
 //error
@@ -49,7 +49,7 @@ function saveProfile(event){
    
    
    profileName.textContent = nameInput.value;
-    profileDecription.textContent = descriptionInput.value;
+    profileDescription.textContent = descriptionInput.value;
 
 
     console.log(nameInput.value);
@@ -69,7 +69,7 @@ function openProfileModal(){
 
     // change the placeholder to current profile name
     nameInput.value =profileName.textContent; 
-    descriptionInput.value = profileDecription.textContent;
+    descriptionInput.value = profileDescription.textContent;
 
 
 }
@@ -97,7 +97,7 @@ function closeModalCard(){
 
 function closepreviewModal(){
    
-    closeModal(previewModalCloseBtn);
+    closeModal(previewModal);
 }
 
 
@@ -126,8 +126,8 @@ function handleAddCardSubmit(event) {
   
   // Log both input values to the console.
 
-  console.log(nameInputCard.value);
   console.log(linkInput.value);
+  console.log(nameInputCard.value);
   
   const cardEl = getCardElement({
     name: nameInputCard.value,
@@ -136,7 +136,11 @@ function handleAddCardSubmit(event) {
   cardList.prepend(cardEl);
 
   // Close the modal.
-  editModalCard.classList.remove("modal_opened");
+
+
+  closeModal(editModalCard);
+
+  event.value="";
 
   event.preventDefault(); 
 }
@@ -180,7 +184,7 @@ cardElementImage.addEventListener("click", ()=> {
     previewImageElement.src = data.link;
     previewImageElement.alt = data.name;
     previewImageCaption.textContent = data.name;
-   previewImageElement.textContent = data.name;
+   
 //error
     openModal(previewModal);
 

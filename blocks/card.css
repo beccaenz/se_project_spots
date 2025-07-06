@@ -11,6 +11,10 @@
   border-radius: 8px;
 }
 
+.card__image:hover {
+  cursor: pointer;
+}
+
 .card__title {
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-size: 20px;
@@ -65,6 +69,7 @@
 .card__like-button_active{
   background-image: url(../images/like-active.svg);
   opacity: 1;
+  background-repeat: no-repeat;
 }
 
 
