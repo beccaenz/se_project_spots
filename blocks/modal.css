@@ -33,11 +33,10 @@
   border-radius: 8px;
 }
 
-/* might need more work on size of close button*/
-.modal__close-btn {
-  position: absolute;
+
+/* Correction needed*/
+.modal__close-btn{
   color: #212121;
-  right: 40px;
   border: none;
   height: 40px;
   width: 40px;
@@ -45,6 +44,14 @@
   background-color: transparent;
   background-image: url("../images/image_modal_close.png");
 }
+
+.modal__close-btn-position{
+  right: 50px;
+  position: absolute;
+}
+
+
+
 
 .modal__close_type_preview {
   top: -3.49px;
@@ -144,7 +151,10 @@
 
   .modal__image {
     padding: unset;
-    font-size: 16px;
     max-width: unset;
+  }
+
+  .modal__caption {
+    font-size: 16px;
   }
 }
