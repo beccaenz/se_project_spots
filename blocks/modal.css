@@ -81,10 +81,17 @@
 }
 
 .modal__caption {
-  /* style 13:39*/
-  height: 20px;
-  color: white;
+  margin: 0;
+  padding: 4px 8px;
   font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #fff;
+  position: absolute;
+  background-color: #212121;
+  border-radius: 8px;
+  left: 0;
+  top: calc(100% + 10px); 
 }
 
 .modal__title {
@@ -144,7 +151,7 @@
     border-radius: 8px;
   }
 
-  .modal__close_type_preview {
+  .modal__close-btn_type_preview {
     top: -48px;
     right: 0;
   }
