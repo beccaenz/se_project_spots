@@ -27,7 +27,8 @@ const nameInputCard = editModalCard.querySelector("#caption");
 const linkInput = editModalCard.querySelector("#link");
 const cardTemplate = document.querySelector("#card-template");
 const cardList = document.querySelector(".cards__list");
-//error
+ const buttonElement = document.querySelector(".modal__submit-btn");
+
 const previewModal = document.querySelector("#preview-modal");
 const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
 const previewImageElement = previewModal.querySelector(".modal__image");
@@ -53,7 +54,6 @@ function saveProfile(event){
     profileDescription.textContent = descriptionInput.value;
 
 
-    console.log(nameInput.value);
 
   
 
@@ -142,8 +142,10 @@ function handleAddCardSubmit(event) {
 
   closeModal(editModalCard);
 
-  //reset corrrection needed
-
+//working  
+ disableButton(buttonElement);
+ // add settings
+ //disableButton(buttonElement, settings);
   addCard.reset();
 
   
