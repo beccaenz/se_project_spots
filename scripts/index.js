@@ -1,19 +1,37 @@
 const initialCards = [
-
-    {name: "San Fran", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg"},
-    {name: "Val Thorens", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg"},
-    {name: "Restaurant terrace", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg"},
-    {name: "An outdoor cafe", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg"},
-    {name: "A very long bridge, over the forest and through the trees", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg"},
-    {name: "Tunnel with morning light", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg"},
-    {name: "Mountain house", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg"},
-
-
+  {
+    name: "San Fran",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+  },
+  {
+    name: "Val Thorens",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
+  },
+  {
+    name: "Restaurant terrace",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
+  },
+  {
+    name: "An outdoor cafe",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
+  },
+  {
+    name: "A very long bridge, over the forest and through the trees",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
+  },
+  {
+    name: "Tunnel with morning light",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
+  },
+  {
+    name: "Mountain house",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
+  },
 ];
 
-
-
 const profileEditButton = document.querySelector(".profile__edit-button");
+const modalFormProfile = document.querySelector("#profile-edit");
+const modalFormCard = document.querySelector("#add-card");
 const editModalCard = document.querySelector("#edit-card-modal");
 const editModalProfile = document.querySelector("#edit-profile-modal");
 const closeButtonProfile = editModalProfile.querySelector(".modal__close-btn");
@@ -22,12 +40,12 @@ const nameInput = editModalProfile.querySelector("#name");
 const descriptionInput = editModalProfile.querySelector("#description");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
-const addCardModalOpenButton = document.querySelector(".profile__add-button"); 
-const nameInputCard = editModalCard.querySelector("#caption"); 
+const addCardModalOpenButton = document.querySelector(".profile__add-button");
+const nameInputCard = editModalCard.querySelector("#caption");
 const linkInput = editModalCard.querySelector("#link");
 const cardTemplate = document.querySelector("#card-template");
 const cardList = document.querySelector(".cards__list");
- const buttonElement = document.querySelector(".modal__submit-btn");
+const buttonElementForm = document.querySelector(".modal__submit-btn");
 
 const previewModal = document.querySelector("#preview-modal");
 const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
@@ -35,102 +53,84 @@ const previewImageElement = previewModal.querySelector(".modal__image");
 const previewImageCaption = previewModal.querySelector(".modal__caption");
 const addCard = document.querySelector("#add-card");
 
+const modals = document.querySelectorAll(".modal");
 
+modals.forEach((modal) => {
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      modal.classList.remove("modal_opened");
+    }
+  });
+});
 
+const modal = document.querySelector(".modal");
 
-function openModal(modal){
-    modal.classList.add("modal_opened");
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape" && editModalCard) {
+    editModalCard.classList.remove("modal_opened");
+    editModalProfile.classList.remove("modal_opened");
+  }
+});
+
+function openModal(modal) {
+  modal.classList.add("modal_opened");
 }
 
-function closeModal(modal){
-    modal.classList.remove("modal_opened");
+function closeModal(modal) {
+  modal.classList.remove("modal_opened");
 }
 
+function saveProfile(event) {
+  event.preventDefault();
+  profileName.textContent = nameInput.value;
+  profileDescription.textContent = descriptionInput.value;
 
-function saveProfile(event){
-   
-   
-   profileName.textContent = nameInput.value;
-    profileDescription.textContent = descriptionInput.value;
-
-
-
-  
-
-    closeModal(editModalProfile);
-    event.preventDefault();
-
-    
+  closeModal(editModalProfile);
 }
 
+function openProfileModal() {
+  openModal(editModalProfile);
+  // reset validation errors
 
-function openProfileModal(){
-   
-    openModal(editModalProfile);
-
-    // change the placeholder to current profile name
-    nameInput.value =profileName.textContent; 
-    descriptionInput.value = profileDescription.textContent;
-
-
+  // change the placeholder to current profile name
+  nameInput.value = profileName.textContent;
+  descriptionInput.value = profileDescription.textContent;
 }
 
-function closeProfileModal(){
-   
-    closeModal(editModalProfile);
+function closeProfileModal() {
+  closeModal(editModalProfile);
 }
 
-
-function openModalCard(){
-   
-
-
-    openModal(editModalCard);
-
-
+function openModalCard() {
+  openModal(editModalCard);
 }
 
-function closeModalCard(){
-  
-    closeModal(editModalCard);
-
-
+function closeModalCard() {
+  closeModal(editModalCard);
 }
 
-function closepreviewModal(){
-   
-    closeModal(previewModal);
+function closepreviewModal() {
+  closeModal(previewModal);
 }
 
-
-
-
-addCardModalOpenButton.addEventListener("click", openModalCard); 
+addCardModalOpenButton.addEventListener("click", openModalCard);
 closeButtonCard.addEventListener("click", closeModalCard);
 closeButtonProfile.addEventListener("click", closeProfileModal);
 previewModalCloseBtn.addEventListener("click", closepreviewModal);
-editModalProfile.addEventListener("submit", saveProfile);
+modalFormProfile.addEventListener("submit", saveProfile);
 profileEditButton.addEventListener("click", openProfileModal);
-
-
-
-
-
-
-
 
 // Create the form submission handler.
 function handleAddCardSubmit(event) {
   // Prevent default browser behavior.
- 
-  event.preventDefault(); 
 
-  
+  event.preventDefault();
+
   // Log both input values to the console.
 
-  console.log(linkInput.value);
-  console.log(nameInputCard.value);
-  
+  //console.log(linkInput.value);
+  //console.log(nameInputCard.value);
+
   const cardEl = getCardElement({
     name: nameInputCard.value,
     link: linkInput.value,
@@ -139,79 +139,61 @@ function handleAddCardSubmit(event) {
 
   // Close the modal.
 
-
   closeModal(editModalCard);
 
-//working  
- disableButton(buttonElement);
- // add settings
- //disableButton(buttonElement, settings);
-  addCard.reset();
+  //working
 
-  
+  ////////////////////////////////////////////////////////////////////
+  disableButton(buttonElementForm, settings);
+  // add settings
+
+  addCard.reset();
 }
 
 // Create the submit listener.
-editModalCard.addEventListener("submit", handleAddCardSubmit);
-
+modalFormCard.addEventListener("submit", handleAddCardSubmit);
 
 //array cards
 
-
-
 //template clone
 
-function getCardElement(data){
-    
-    const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
-    const cardElementTitle = cardElement.querySelector(".card__title");
-    const cardElementImage = cardElement.querySelector(".card__image");
-    const cardLikeBtnEl = cardElement.querySelector(".card__like-button");
+function getCardElement(data) {
+  const cardElement = cardTemplate.content
+    .querySelector(".card")
+    .cloneNode(true);
+  const cardElementTitle = cardElement.querySelector(".card__title");
+  const cardElementImage = cardElement.querySelector(".card__image");
+  const cardLikeBtnEl = cardElement.querySelector(".card__like-button");
 
-    cardElementImage.src = data.link;
-    cardElementImage.alt = data.name;
-    cardElementTitle.textContent = data.name;
+  cardElementImage.src = data.link;
+  cardElementImage.alt = data.name;
+  cardElementTitle.textContent = data.name;
 
-    //event listener for like button
+  //event listener for like button
 
-    cardLikeBtnEl.addEventListener("click",() => {
-        cardLikeBtnEl.classList.toggle("card__like-button_active");
-    })
+  cardLikeBtnEl.addEventListener("click", () => {
+    cardLikeBtnEl.classList.toggle("card__like-button_active");
+  });
 
-    const deleteButton = cardElement.querySelector(".delete-btn");
-    deleteButton.addEventListener("click",() =>{
-        deleteButton.closest(".card").remove();
+  const deleteButton = cardElement.querySelector(".delete-btn");
+  deleteButton.addEventListener("click", () => {
+    deleteButton.closest(".card").remove();
+  });
 
-
-    });
-
-
-cardElementImage.addEventListener("click", ()=> {
+  cardElementImage.addEventListener("click", () => {
     previewImageElement.src = data.link;
     previewImageElement.alt = data.name;
     previewImageCaption.textContent = data.name;
-   
 
     openModal(previewModal);
 
+    //reset here
+  });
 
-//reset here
+  return cardElement;
+}
 
-
-
+initialCards.forEach(function (item) {
+  const cardEl = getCardElement(item);
+  cardList.append(cardEl);
 });
-
-return cardElement;
-};
-
-
-initialCards.forEach(function(item){
-
- 
-
-const cardEl = getCardElement(item);
-cardList.append(cardEl);
-
-});
-
-
