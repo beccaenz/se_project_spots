@@ -65,19 +65,30 @@ modals.forEach((modal) => {
 
 const modal = document.querySelector(".modal");
 
-document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape" && editModalCard) {
-    editModalCard.classList.remove("modal_opened");
-    editModalProfile.classList.remove("modal_opened");
+// document.addEventListener("keydown", function (event) {
+//   if (event.key === "Escape" && editModalCard) {
+//     editModalCard.classList.remove("modal_opened");
+//     editModalProfile.classList.remove("modal_opened");
+//   }
+// });
+
+function handleEscape(evt) {
+  if (evt.key === "Escape") {
+    const openModal = document.querySelector(".modal.modal_opened");
+    if (openModal) {
+      closeModal(openModal);
+    }
   }
-});
+}
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscape);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscape);
 }
 
 function saveProfile(event) {
@@ -95,6 +106,7 @@ function openProfileModal() {
   // change the placeholder to current profile name
   nameInput.value = profileName.textContent;
   descriptionInput.value = profileDescription.textContent;
+  resetValidation(editModalProfile, settings);
 }
 
 function closeProfileModal() {
