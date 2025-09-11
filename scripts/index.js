@@ -63,15 +63,6 @@ modals.forEach((modal) => {
   });
 });
 
-const modal = document.querySelector(".modal");
-
-// document.addEventListener("keydown", function (event) {
-//   if (event.key === "Escape" && editModalCard) {
-//     editModalCard.classList.remove("modal_opened");
-//     editModalProfile.classList.remove("modal_opened");
-//   }
-// });
-
 function handleEscape(evt) {
   if (evt.key === "Escape") {
     const openModal = document.querySelector(".modal.modal_opened");
