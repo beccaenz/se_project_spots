@@ -45,8 +45,8 @@ const nameInputCard = editModalCard.querySelector("#caption");
 const linkInput = editModalCard.querySelector("#link");
 const cardTemplate = document.querySelector("#card-template");
 const cardList = document.querySelector(".cards__list");
-const buttonElementForm = document.querySelector(".modal__submit-btn");
-
+const cardFormSubmitButton = editModalCard.querySelector(".modal__submit-btn");
+//
 const previewModal = document.querySelector("#preview-modal");
 const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
 const previewImageElement = previewModal.querySelector(".modal__image");
@@ -58,7 +58,8 @@ const modals = document.querySelectorAll(".modal");
 modals.forEach((modal) => {
   modal.addEventListener("click", function (event) {
     if (event.target === modal) {
-      modal.classList.remove("modal_opened");
+      // modal.classList.remove("modal_opened");
+      closeModal(openModal);
     }
   });
 });
@@ -147,7 +148,7 @@ function handleAddCardSubmit(event) {
   //working
 
   ////////////////////////////////////////////////////////////////////
-  disableButton(buttonElementForm, settings);
+  disableButton(cardFormSubmitButton, settings);
   // add settings
 
   addCard.reset();

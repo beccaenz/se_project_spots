@@ -1,4 +1,3 @@
-// I've corrected the 4 needs correction are you not seeing the update? I've added color: rgba(33, 33, 33, 0.7); to modal__label and corrected the other errors
 
 const settings = {
   formSelector: ".modal__form",
