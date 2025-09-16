@@ -59,7 +59,7 @@ modals.forEach((modal) => {
   modal.addEventListener("click", function (event) {
     if (event.target === modal) {
       // modal.classList.remove("modal_opened");
-      closeModal(openModal);
+      closeModal(modal);
     }
   });
 });
